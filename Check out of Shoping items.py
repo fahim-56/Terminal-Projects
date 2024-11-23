@@ -28,6 +28,7 @@ customer1.add_to_cart('Cake',500,1)
 customer1.add_to_cart('Ice cream',50,5)
 
 
-# customer1.total_to_pay()
+Total = customer1.total_to_pay()
+print(f"You have to pay {Total}")
 N= int(input("Please pay your amount:"))
 customer1.checkout(N)

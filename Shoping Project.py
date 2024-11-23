@@ -56,16 +56,37 @@ products.add_to_list("Rice",70,50)
 products.add_to_list("Oil",180,5)
 products.add_to_list("Harpic",120,30)
 
+# while True:
+#     x = int(input("""1.Add more
+#     2. Exit\n"""))
+#     if(x==2):
+#         break
+#     Str = input("Enter your product name,price per unit and quantity : ")
+#     price = int(input())
+#     amount = int(input())
+#     products.add_to_list(Str,price,amount)
+
 
 # shoping
 
 customer = shope()
-customer.Add_to_cart("Sugar",5)
-customer.Add_to_cart("Rice",10)
-customer.Add_to_cart("Salt",10)
-customer.Add_to_cart("Salt",10)
-customer.Add_to_cart("Oil",10)
-customer.Add_to_cart("Egg",10)
+# customer.Add_to_cart("Sugar",5)
+# customer.Add_to_cart("Rice",10)
+# customer.Add_to_cart("Salt",10)
+# customer.Add_to_cart("Salt",10)
+# customer.Add_to_cart("Oil",10)
+# customer.Add_to_cart("Egg",10)
 
-customer.Remove_the_last_item_From_cart()
+print("Start to add in cart\n")
+while True:
+    x = int(input("""1.Add more
+    2. Exit\n"""))
+    if(x==2):
+        break
+    print("Enter your product name and quantity : \n")
+    Str = input()
+    quantity = int(input())
+    customer.Add_to_cart(Str,quantity)
+
+# customer.Remove_the_last_item_From_cart()
 customer.checkout()

@@ -50,8 +50,8 @@ class Ride:
 
     def __repr__(self):
         if self.end_time== None:
-            return f"\nRider :{self.rider.name} \nDriver : {self.driver.name}\nStart time : {self.start_time} from {self.start_location}\nEnd time : going to {self.end_location} on {self.vehical.vehical_type}"
-        return f"\nRider :{self.rider.name} \nDriver : {self.driver.name}\nStart time : {self.start_time} from {self.start_location}\nEnd time : {self.end_time} at {self.end_location}"
+            return f"\nRider :{self.rider.name} \nDriver : {self.driver.name}\nStart time : {self.start_time} from {self.start_location}\nEnd time : going to {self.end_location}  on {self.vehical.vehical_type}\nTotal cost : {self.estimited_fare}"
+        return f"\nRider :{self.rider.name} \nDriver : {self.driver.name}\nStart time : {self.start_time} from {self.start_location}\nEnd time : {self.end_time} at {self.end_location} on {self.vehical.vehical_type}\nTotal cost : {self.estimited_fare}"
 
 class Ride_Request:
     def __init__(self,rider,end_location):

@@ -82,6 +82,6 @@ class admin(User):
         print("Account created successfully!")
 
     def delete_account(self,account,bank):
+        print(f"{account.name}'s account deleted successfully!")
         bank.accounts.remove(account)
-        print(f"{bank.name}'s account deleted successfully!")
 

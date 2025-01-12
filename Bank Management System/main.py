@@ -57,8 +57,7 @@ while True:
             break
         else:
             print("Wrong input! Try Again.")
-
-
+            
     elif current_user == Admin:
         op = int(input("""Enter your option
                        1.Create account

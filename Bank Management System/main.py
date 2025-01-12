@@ -58,47 +58,7 @@ while True:
         else:
             print("Wrong input! Try Again.")
 
-    # if current_user == None:
-    #     print("\tNo loged in user.")
-    #     op = (input("\n\tLog in ? Registration (l/r)\n"))
-    #     if op =='r':
-    #         name = input("Enter your name:")
-    #         email = input("Enter your email:")
-    #         address = input("Enter your address:")
-    #         account_type = input("Enter your account type:")
-    #         password = input("Enter your password:")
-    #         account = account_user(name,email,address,account_type,password,IBBL)
-    #         IBBL.accounts.append(account)
-    #         current_user = account
-    #     elif op == 'l':
-    #         x=(input("\n\tUser log in ? Admin Log in (u/a)\n"))
-    #         if(x=='a'):
-    #             name = input("Enter Admin name:")
-    #             password = input("Enter Admin password:")
-    #             user = IBBL.find_account(name)
-    #             if user == None:
-    #                 print()
-    #             elif user.password != password:
-    #                 print("Wrong password")
-    #             else:
-    #                 current_user = user
 
-    #             if current_user == Admin:
-    #                 print("Successfully loged in as admin!")
-    #             else:
-    #                 print("You are not Admin.")
-    #                 current_user = None
-    #         elif x=='u':
-    #             name = input("Enter your name:")
-    #             password = input("Enter your password:")
-    #             user = IBBL.find_account(name)
-    #             if user == None:
-    #                 print("User not found!")
-    #             elif user.password != password:
-    #                 print("Wrong password")
-    #             else:
-    #                 current_user = user
-    #                 print("Loged in successfully!")
     elif current_user == Admin:
         op = int(input("""Enter your option
                        1.Create account
@@ -179,36 +139,3 @@ while True:
             print("Log Out Successfull.")
         else:
             print("Wrong option chossen!")
-# r
-# Fahim
-# fahim@gmail.com
-# Rajbari
-# Current
-# 1234
-# 7
-# r
-# Tonmoy
-# tonmoy@gmail.com
-# Dhaka
-# Savings
-# 123
-
-# Countinue as
-# 1. Admin
-# 2. Account Holder/ User
-# 3. Exit
-
-# Enter Admin Password:
-
-# Admin Menu:
-# 1. Create user
-# 2. so on
-# 3. Exit
-
-
-# Enter User Password:
-
-# User Menu:
-# 1. Deposit
-# 2. so on
-# 3. Exit

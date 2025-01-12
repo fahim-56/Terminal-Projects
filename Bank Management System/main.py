@@ -8,35 +8,40 @@ current_user = None
 while True:
     if current_user == None:
         print("\tNo loged in user.")
-        op = (input("\n\tLog in ? Registration (l/r)\n"))
-        if op =='r':
-            name = input("Enter your name:")
-            email = input("Enter your email:")
-            address = input("Enter your address:")
-            account_type = input("Enter your account type:")
-            password = input("Enter your password:")
-            account = account_user(name,email,address,account_type,password,IBBL)
-            IBBL.accounts.append(account)
-            current_user = account
-        elif op == 'l':
-            x=(input("\n\tUser log in ? Admin Log in (u/a)\n"))
-            if(x=='a'):
-                name = input("Enter Admin name:")
-                password = input("Enter Admin password:")
-                user = IBBL.find_account(name)
-                if user == None:
-                    print()
-                elif user.password != password:
-                    print("Wrong password")
-                else:
-                    current_user = user
+        p=int(input("""Continue as:
+        1.Admin
+        2.User
+        3.Exit
+        """))
+        if(p==1):
+            name = input("Enter Admin name:")
+            password = input("Enter Admin password:")
+            user = IBBL.find_account(name)
+            if user == None:
+                print()
+            elif user.password != password:
+                print("Wrong password")
+            else:
+                current_user = user
 
-                if current_user == Admin:
-                    print("Successfully loged in as admin!")
-                else:
-                    print("You are not Admin.")
-                    current_user = None
-            elif x=='u':
+            if current_user == Admin:
+                print("Successfully loged in as admin!")
+            else:
+                print("You are not Admin.")
+                current_user = None
+        elif(p==2):
+            print("\tNo loged in user.")
+            op = (input("\n\tLog in ? Registration (l/r)\n"))
+            if op =='r':
+                name = input("Enter your name:")
+                email = input("Enter your email:")
+                address = input("Enter your address:")
+                account_type = input("Enter your account type:")
+                password = input("Enter your password:")
+                account = account_user(name,email,address,account_type,password,IBBL)
+                IBBL.accounts.append(account)
+                current_user = account
+            elif op == 'l':
                 name = input("Enter your name:")
                 password = input("Enter your password:")
                 user = IBBL.find_account(name)
@@ -47,6 +52,53 @@ while True:
                 else:
                     current_user = user
                     print("Loged in successfully!")
+
+        elif p==3:
+            break
+        else:
+            print("Wrong input! Try Again.")
+
+    # if current_user == None:
+    #     print("\tNo loged in user.")
+    #     op = (input("\n\tLog in ? Registration (l/r)\n"))
+    #     if op =='r':
+    #         name = input("Enter your name:")
+    #         email = input("Enter your email:")
+    #         address = input("Enter your address:")
+    #         account_type = input("Enter your account type:")
+    #         password = input("Enter your password:")
+    #         account = account_user(name,email,address,account_type,password,IBBL)
+    #         IBBL.accounts.append(account)
+    #         current_user = account
+    #     elif op == 'l':
+    #         x=(input("\n\tUser log in ? Admin Log in (u/a)\n"))
+    #         if(x=='a'):
+    #             name = input("Enter Admin name:")
+    #             password = input("Enter Admin password:")
+    #             user = IBBL.find_account(name)
+    #             if user == None:
+    #                 print()
+    #             elif user.password != password:
+    #                 print("Wrong password")
+    #             else:
+    #                 current_user = user
+
+    #             if current_user == Admin:
+    #                 print("Successfully loged in as admin!")
+    #             else:
+    #                 print("You are not Admin.")
+    #                 current_user = None
+    #         elif x=='u':
+    #             name = input("Enter your name:")
+    #             password = input("Enter your password:")
+    #             user = IBBL.find_account(name)
+    #             if user == None:
+    #                 print("User not found!")
+    #             elif user.password != password:
+    #                 print("Wrong password")
+    #             else:
+    #                 current_user = user
+    #                 print("Loged in successfully!")
     elif current_user == Admin:
         op = int(input("""Enter your option
                        1.Create account
@@ -122,8 +174,9 @@ while True:
             receiver_name = input("Enter Receiver Account name :")
             receiver = IBBL.find_account(receiver_name)
             account.transfer_balance(amount,receiver,IBBL)
-        elif option ==7:
+        elif option == 7:
             current_user = None
+            print("Log Out Successfull.")
         else:
             print("Wrong option chossen!")
 # r
@@ -139,3 +192,23 @@ while True:
 # Dhaka
 # Savings
 # 123
+
+# Countinue as
+# 1. Admin
+# 2. Account Holder/ User
+# 3. Exit
+
+# Enter Admin Password:
+
+# Admin Menu:
+# 1. Create user
+# 2. so on
+# 3. Exit
+
+
+# Enter User Password:
+
+# User Menu:
+# 1. Deposit
+# 2. so on
+# 3. Exit

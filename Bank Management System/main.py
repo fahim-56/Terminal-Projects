@@ -19,16 +19,34 @@ while True:
             IBBL.accounts.append(account)
             current_user = account
         elif op == 'l':
-            name = input("Enter your name:")
-            password = input("Enter your password:")
-            user = IBBL.find_account(name)
-            if user == None:
-                print("User not found!")
-            elif user.password != password:
-                print("Wrong password")
-            else:
-                current_user = user
-                print("Loged in successfully!")
+            x=(input("\n\tUser log in ? Admin Log in (u/a)\n"))
+            if(x=='a'):
+                name = input("Enter Admin name:")
+                password = input("Enter Admin password:")
+                user = IBBL.find_account(name)
+                if user == None:
+                    print()
+                elif user.password != password:
+                    print("Wrong password")
+                else:
+                    current_user = user
+
+                if current_user == Admin:
+                    print("Successfully loged in as admin!")
+                else:
+                    print("You are not Admin.")
+                    current_user = None
+            elif x=='u':
+                name = input("Enter your name:")
+                password = input("Enter your password:")
+                user = IBBL.find_account(name)
+                if user == None:
+                    print("User not found!")
+                elif user.password != password:
+                    print("Wrong password")
+                else:
+                    current_user = user
+                    print("Loged in successfully!")
     elif current_user == Admin:
         op = int(input("""Enter your option
                        1.Create account
@@ -100,8 +118,8 @@ while True:
             amount = int(input("Enter loan amount:"))
             account.take_loan(amount,IBBL)
         elif option == 6:
-            amount = int(input("Enter transfering amount:"))
-            receiver_name = input("Enter Receiver name :")
+            amount = int(input("Enter the amount to transfer:"))
+            receiver_name = input("Enter Receiver Account name :")
             receiver = IBBL.find_account(receiver_name)
             account.transfer_balance(amount,receiver,IBBL)
         elif option ==7:
